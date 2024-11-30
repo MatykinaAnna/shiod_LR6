@@ -1,0 +1,8 @@
+docker build -t test_image:latest //создание образа
+docker run -d -p 5432:5432 --name test_container test_image:latest //запуск контейнера
+
+docker-compose up --build //начать исполнение инструкций docker-compose
+docker exec -it d_cont psql -d dbname -U dbuser dbn //запуск контейнера в интерактивной среде с интерпретатором СУБД postgres
+-----
+VOLUME /d_data:/var/lib/postgresql/data в Dockerfile создаст том (volume)
+----
